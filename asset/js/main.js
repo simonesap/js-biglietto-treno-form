@@ -13,3 +13,39 @@ va applicato uno sconto del 40% per gli over 65.
 L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). Questo richiederà un minimo di ricerca.
   6) i risultati dovranno avere max 2 decimali (formula da cercare)
 */
+
+let bottone_1 = document.getElementById('genera');
+
+bottone_1.addEventListener('click',
+    
+    function genera() {
+    
+        let nomeUtente = String(document.getElementById('nomeCognome'));
+        console.log(typeof(nomeUtente));
+        document.getElementById('nomePasseggero').innerHTML = `${nomeUtente}`;
+
+        let kilometri = Number(document.getElementById('kilometri'));
+        console.log(typeof(kilometri));
+
+        let tariffaAlKm = Number(0.21);
+
+        let prezzoTicket = Number(kilometri * tariffaAlKm);
+        console.log(prezzoTicket)
+
+        let fasciaEtà = document.getElementById('fasciaEtà');
+
+        let minorenne = (document.getElementById('minorenne'));
+        console.log(typeof(minorenne));
+
+        let maggiorenne = document.getElementById('maggiorenne');
+        
+        let over_65 = document.getElementById('over_65');
+
+        if (fasciaEtà = minorenne) {
+
+           
+            document.getElementById('costoMinorenne').innerHTML = `${prezzoTicket - ((prezzoTicket / 100) * 20)}`;
+        }
+    }
+)
+

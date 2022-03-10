@@ -14,7 +14,7 @@
         <form class="form-inline d-flex flex-row justify-content-center" action="">
             <div class="form-group rounded d-flex flex-column m-3">
                 <label class="text-capitalize" for="">nome cognome</label>
-                <input class="rounded text-center" type="text" placeholder="Inserisci il tuo nome">
+                <input id="nomeCognome" class="rounded text-center" type="name" placeholder="Inserisci il tuo nome">
             </div>
             <div class="form-group rounded d-flex flex-column m-3">
                 <label class="text-capitalize" for="kilometri"><span class="text-uppercase">k</span>m da percorrere</label>
@@ -23,19 +23,41 @@
             <div class="form-group d-flex flex-column m-3">
                 <label class="text-capitalize" for=""><span class="text-uppercase">f</span>ascia d'età</label>
                 <select class="text-capitalize rounded" name="fasciaEtà" id="fasciaEtà">
-                    <option class="text-capitalize text-white bg_fucsia" value="minorenne">minorenne</option>
-                    <option class="text-capitalize text-white bg_fucsia" value="maggiorenne">maggiorenne</option>
-                    <option class="text-capitalize text-white bg_fucsia" value="over 65">over 65</option>
+                    <option id="minorenne" class="text-capitalize text-white bg_fucsia" value="minorenne">minorenne</option>
+                    <option id="maggiorenne" class="text-capitalize text-white bg_fucsia" value="maggiorenne">maggiorenne</option>
+                    <option id="over_65" class="text-capitalize text-white bg_fucsia" value="over 65">over 65</option>
                   </select>
             </div>
         </form>
         <div class="bottoni mt-3">
-            <button class="text-capitalize c_fucsia m-2 rounded" id="genera">genera</button>
-            <button class="text-capitalize c_fucsia m-2 rounded" id="annulla">annulla</button>
+            <button class="text-capitalize c_fucsia m-2 rounded" onclick="genera" id="genera">genera</button>
+            <button class="text-capitalize c_fucsia m-2 rounded" onclick="annulla" id="annulla">annulla</button>
         </div>
     </div>
     <h1 class="text-uppercase text-center text-white fw-bold py-4">il tuo biglietto</h1>
-    
+    <div class="container text-center bg-white p-3 border">
+        <h5 class="text-uppercase text-dark text-start">dettagli passeggero</h5>
+        <div class="border-bottom"></div>
+        <div class="d-flex flex-row border-bottom border-dark">
+            <div class="bg-secondary text-start height_150px">
+                <h5 class="text-uppercase text-dark p-2">nome passeggero</h5>
+                <div id="nomePasseggero"></div>
+            </div>
+            <div>
+                <ul class="list-group d-flex flex-row"">
+                    <li class="list-group-item text-capitalize border-0 me-5">offerta</li>
+                    <li class="list-group-item text-capitalize border-0 mx-3">carrozza</li>
+                    <li class="list-group-item text-capitalize border-0 mx-3">codice <span class="text-uppercase">cp</span></li>
+                    <li class="list-group-item border-0 mx-3">
+                        <span class="text-uppercase">c</span>osto biglietto
+                        <div class="text-dark" id="costoMinorenne"></div>
+                        <div class="costoMaggiorenne"></div>
+                        <div class="costoOver_65"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
     <script type="text/javascript" src="./asset/js/main.js"></script>
 </body>
