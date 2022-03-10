@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./asset/css/style.css">
+    <title>Calcolo del prezzo del biglietto del treno</title>
+</head>
+<body class="bg_fucsia height_100vh">
+    <h1 class="text-uppercase text-center text-white fw-bold py-4">calcola il prezzo del tuo biglietto</h1>
+    <div class="container text-center bg-white p-3 rounded border">
+        <form class="form-inline d-flex flex-row justify-content-center" action="">
+            <div class="form-group rounded d-flex flex-column m-3">
+                <label class="text-capitalize" for="">nome cognome</label>
+                <input class="rounded text-center" type="text" placeholder="Inserisci il tuo nome">
+            </div>
+            <div class="form-group rounded d-flex flex-column m-3">
+                <label class="text-capitalize" for="kilometri"><span class="text-uppercase">k</span>m da percorrere</label>
+                <input type="number" class="rounded text-center" id="kilometri" name="kilometri" placeholder="Inserisci i km" min="5" max="2000">
+            </div>
+            <div class="form-group d-flex flex-column m-3">
+                <label class="text-capitalize" for=""><span class="text-uppercase">f</span>ascia d'età</label>
+                <select class="text-capitalize rounded" name="fasciaEtà" id="fasciaEtà">
+                    <option class="text-capitalize text-white bg_fucsia" value="minorenne">minorenne</option>
+                    <option class="text-capitalize text-white bg_fucsia" value="maggiorenne">maggiorenne</option>
+                    <option class="text-capitalize text-white bg_fucsia" value="over 65">over 65</option>
+                  </select>
+            </div>
+        </form>
+        <div class="bottoni mt-3">
+            <button class="text-capitalize c_fucsia m-2 rounded" id="genera">genera</button>
+            <button class="text-capitalize c_fucsia m-2 rounded" id="annulla">annulla</button>
+        </div>
+    </div>
+    <h1 class="text-uppercase text-center text-white fw-bold py-4">il tuo biglietto</h1>
+    
+
+    <script type="text/javascript" src="./asset/js/main.js"></script>
+</body>
+</html>
