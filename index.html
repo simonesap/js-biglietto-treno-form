@@ -13,16 +13,16 @@
     <div class="container text-center bg-white p-3 rounded border">
         <form class="form-inline d-flex flex-row justify-content-center" action="">
             <div class="form-group rounded d-flex flex-column m-3">
-                <label class="text-capitalize" for="">nome cognome</label>
-                <input id="nomeCognome" class="rounded text-center" type="name" placeholder="Inserisci il tuo nome">
+                <label class="text-capitalize c_fucsia" for="">nome cognome</label>
+                <input id="nomeCognome" class="rounded text-center border_color_f" type="name" placeholder="Inserisci il tuo nome">
             </div>
             <div class="form-group rounded d-flex flex-column m-3">
-                <label class="text-capitalize" for="kilometri"><span class="text-uppercase">k</span>m da percorrere</label>
-                <input type="number" class="rounded text-center" id="kilometri" name="kilometri" placeholder="Inserisci i km" min="5" max="2000">
+                <label class="text-capitalize c_fucsia" for="kilometri"><span class="text-uppercase">k</span>m da percorrere</label>
+                <input type="number" class="rounded text-center border_color_f" id="kilometri" name="kilometri" placeholder="Inserisci i km" min="5" max="2000">
             </div>
             <div class="form-group d-flex flex-column m-3">
-                <label class="text-capitalize" for=""><span class="text-uppercase">f</span>ascia d'età</label>
-                <select class="text-capitalize rounded" name="fasciaEtà" id="fasciaEtà">
+                <label class="text-capitalize c_fucsia" for=""><span class="text-uppercase">f</span>ascia d'età</label>
+                <select class="text-capitalize rounded border_color_f" name="fasciaEtà" id="fasciaEtà">
                     <option id="minorenne" class="text-capitalize text-white bg_fucsia" value="minorenne">minorenne</option>
                     <option id="maggiorenne" class="text-capitalize text-white bg_fucsia" value="maggiorenne">maggiorenne</option>
                     <option id="over_65" class="text-capitalize text-white bg_fucsia" value="over 65">over 65</option>
@@ -30,12 +30,12 @@
             </div>
         </form>
         <div class="bottoni mt-3">
-            <button class="text-capitalize c_fucsia m-2 rounded" onclick="genera" id="genera">genera</button>
-            <button class="text-capitalize c_fucsia m-2 rounded" onclick="annulla" id="annulla">annulla</button>
+            <button class="text-capitalize fw-bold border_color_f c_fucsia m-2 rounded" onclick="genera" id="genera">genera</button>
+            <button class="text-capitalize fw-bold border_color_f c_fucsia m-2 rounded" onclick="annulla" id="annulla">annulla</button>
         </div>
     </div>
     <h1 class="text-uppercase text-center text-white fw-bold py-4">il tuo biglietto</h1>
-    <div class="container text-center bg-white p-3 border">
+    <div class="container text-center bg-white p-3 border display_none" id="onClick">
         <h5 class="text-uppercase text-dark text-start">dettagli passeggero</h5>
         <div class="border-bottom"></div>
         <div class="d-flex flex-row border-bottom border-dark">
@@ -44,15 +44,26 @@
                 <div id="nomePasseggero"></div>
             </div>
             <div>
-                <ul class="list-group d-flex flex-row"">
-                    <li class="list-group-item text-capitalize border-0 me-5">offerta</li>
-                    <li class="list-group-item text-capitalize border-0 mx-3">carrozza</li>
-                    <li class="list-group-item text-capitalize border-0 mx-3">codice <span class="text-uppercase">cp</span></li>
+                <ul class="list-group d-flex flex-row pb-0"">
+                    <li class="list-group-item text-capitalize border-0 me-5">
+                        <span class="fw-bold">offerta</span>
+                        <div class="text-capitalize mt-4 text-start" id="bigliettoStandard"></div>
+                        <div class="text-capitalize text-start" id="scontoMinorenne"></div>
+                        <div class="text-capitalize text-start" id="scontoOver65"></div>
+                    </li>
+                    <li class="list-group-item text-capitalize border-0 mx-3">
+                        <span class="fw-bold">carrozza</span>
+                        <div id="carrozza" class="mt-4"></div>
+                    </li>
+                    <li class="list-group-item text-capitalize border-0 mx-3">
+                        <span class="fw-bold">codice <span class="text-uppercase">cp</span></span>
+                        <div id="codice" class="mt-4"></div>
+                    </li>
                     <li class="list-group-item border-0 mx-3">
-                        <span class="text-uppercase">c</span>osto biglietto
-                        <div class="text-dark" id="costoMinorenne"></div>
-                        <div class="costoMaggiorenne"></div>
-                        <div class="costoOver_65"></div>
+                        <span class="fw-bold"><span class="text-uppercase fw-bold">c</span>osto biglietto</span>
+                        <div class="text-dark mt-4" id="costoMinorenne"></div>
+                        <div class="text-dark mt-4" id="costoMaggiorenne"></div>
+                        <div class="text-dark mt-4" id="costoOver_65"></div>
                     </li>
                 </ul>
             </div>

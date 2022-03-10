@@ -10,3 +10,14 @@
 .height_150px{
     height: 150px;
 }
+
+.border_color_f{
+    border-color: #b81550;
+}
+
+.display_none{
+    display: none;
+}
+
+.display_block{
+    display: block;
