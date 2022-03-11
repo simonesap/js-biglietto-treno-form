@@ -13,71 +13,76 @@ L'output del prezzo finale va messo fuori in forma umana (con massimo due decima
   5) i risultati dovranno avere max 2 decimali (formula da cercare)
 */
 
-let bottone_1 = document.getElementById('genera');
 
-bottone_1.addEventListener('click',
-    
-    function genera() {
-        
-        onClick.classList.toggle('display_block');
+//Selezionare i campi del DOM
+let nome = document.getElementById('nome');
+console.log('nome');
 
-        let nomeUtente = String(document.getElementById('nomeCognome'));
-        console.log(typeof(nomeUtente));
-        document.getElementById('nomePasseggero').innerHTML = `${nomeUtente}`;
+let km = document.getElementById('km');
+console.log('km');
 
-        let kilometri = Number(document.getElementById('kilometri'));
-        console.log(typeof(kilometri));
+let fasciaEta = document.getElementById('eta');
+console.log('eta');
 
-        let tariffaAlKm = 0.21;
+let bottoneGenera = document.getElementById('btnGenera');
+let bottoneAnnulla = document.getElementById('btnAnnulla');
 
-        let prezzoTicket = (kilometri * tariffaAlKm);
-        console.log(prezzoTicket);
+let tableDati = document.getElementById('onClick');
 
-        let fasciaEtà = document.getElementById('fasciaEtà');
+let nomePasseggero = document.getElementById('nomePasseggero');
+console.log('nomePasseggero');
 
-        let minorenne = Number(document.getElementById('minorenne'));
-        console.log(typeof(minorenne));
+let sconto = document.getElementById('sconto');
 
-        let scontoMinorenne = document.getElementById('scontoMinorenne');
+let prezzoTicket = document.getElementById('prezzoTabella');
 
-        let maggiorenne = document.getElementById('maggiorenne');
-        document.getElementById('costoMaggiorenne').innerHTML = `${prezzoTicket}`;
-        
-        let over_65 = document.getElementById('over_65');
+let numeroRandom = Math.floor(Math.random() *99999);
+console.log(numeroRandom)
 
-        document.getElementById("carrozza").innerHTML = Math.floor(Math.random() * 12) + 1;
+let numeroRandomCarrozza = Math.floor(Math.random() * 9 +1);
 
-        document.getElementById("codice").innerHTML = Math.floor(Math.random() * 100000) + 1;
+let carrozza = document.getElementById('numCarrozza');
 
-        if (fasciaEtà == minorenne) {
+let codCP = document.getElementById('codiceCP');
 
-            document.getElementById('costoMinorenne').innerHTML = `${prezzoTicket - ((prezzoTicket / 100) * 20)}`;
-            document.getElementById('scontoMinorenne').innerHTML = `Sconto Minorenne`;
-           
+//LOGICA
 
-        } else if (fasciaEtà == over_65) {
-            
-            document.getElementById('costoOver_65').innerHTML = `${prezzoTicket - ((prezzoTicket / 100) * 40)}`;
-            document.getElementById('scontoOver65').innerHTML = `Sconto Over 65`;
-        
-        } else {
-            
-            document.getElementById('costoMaggiorenne').innerHTML = `${prezzoTicket}`;
-            document.getElementById('bigliettoStandard').innerHTML = `Biglietto Standard`;
+bottoneGenera.addEventListener('click',
+  function() {
+    //Recuperare i dati dagli input
+    console.log(nome.value, km.value, fasciaEta.value);
 
-        }
+    //Stampare i dati nella tabella
+      //Selezionato l'elemento dove scrivere il value ottenuto
+      //Scrittura dentro il tag HTML selezionato
+      //Abbinare il valore corretto
+    nomePasseggero.innerHTML = nome.value;
+
+    // sconto.innerHTML = '20$'
+    if (fasciaEta.value == 'minorenne') {
+      sconto.innerHTML = 'Sconto del : 20%';
+      prezzoTicket.innerHTML = `${((km.value * 0.21) * 0.80).toFixed(2)}&euro;`;
+    } else if (fasciaEta.value == 'maggiorenne') {
+      sconto.innerHTML = 'Nessuno sconto';
+      prezzoTicket.innerHTML = `${(km.value * 0.21).toFixed(2)}&euro;`;
+    } else (fasciaEta.value == 'over-65'); {
+      sconto.innerHTML = 'Sconto del : 40%';
+      prezzoTicket.innerHTML = `${((km.value * 0.21) * 0.60).toFixed(2)}&euro;`;
     }
+
+    codCP.innerHTML = numeroRandom;
+
+    carrozza.innerHTML = numeroRandomCarrozza;
+
+
+    //Mostrare la tabella
+    tableDati.classList.remove('d-none')
+  }
 )
 
-let bottone_2 = document.getElementById('annulla');
+bottoneAnnulla.addEventListener('click',
+    function() {
+        tableDati.classList.add('d-none');
+    } 
 
-bottone_2.addEventListener('click',
-
-    function () {
-    
-        onClick.classList.toggle('display_none');
-
-    }
-
-);
-
+)
